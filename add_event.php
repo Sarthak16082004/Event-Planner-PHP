@@ -36,39 +36,47 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add New Event</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
-        <h1>Add New Event</h1>
+        <h1><i class="fas fa-calendar-plus"></i> Add New Event</h1>
         
         <?php if (isset($error)): ?>
-            <div class="error"><?php echo $error; ?></div>
+            <div class="error">
+                <i class="fas fa-exclamation-circle"></i> <?php echo $error; ?>
+            </div>
         <?php endif; ?>
         
         <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
             <div class="form-group">
-                <label for="title">Event Title:</label>
+                <label for="title"><i class="fas fa-heading"></i> Event Title:</label>
                 <input type="text" id="title" name="title" required>
             </div>
             
             <div class="form-group">
-                <label for="event_date">Event Date:</label>
+                <label for="event_date"><i class="fas fa-calendar-alt"></i> Event Date:</label>
                 <input type="date" id="event_date" name="event_date" required>
             </div>
             
             <div class="form-group">
-                <label for="location">Location:</label>
+                <label for="location"><i class="fas fa-map-marker-alt"></i> Location:</label>
                 <input type="text" id="location" name="location" required>
             </div>
             
             <div class="form-group">
-                <label for="description">Description:</label>
+                <label for="description"><i class="fas fa-align-left"></i> Description:</label>
                 <textarea id="description" name="description" rows="4"></textarea>
             </div>
             
             <div class="form-actions">
-                <button type="submit" class="btn">Save Event</button>
-                <a href="index.php" class="btn cancel">Cancel</a>
+                <button type="submit" class="btn">
+                    <i class="fas fa-save"></i> Save Event
+                </button>
+                <a href="index.php" class="btn cancel">
+                    <i class="fas fa-times"></i> Cancel
+                </a>
             </div>
         </form>
     </div>
